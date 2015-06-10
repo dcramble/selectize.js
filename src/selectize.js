@@ -1746,7 +1746,7 @@ $.extend(Selectize.prototype, {
 		offset.top += $control.outerHeight(true);
 
 		this.$dropdown.css({
-			width : $control.outerWidth(),
+			width : (typeof undefined !== typeof this.settings.dropdownOffsetWidth) ? ($control.outerWidth() + this.settings.dropdownOffsetWidth) : $control.outerWidth(),
 			top   : offset.top,
 			left  : offset.left
 		});
