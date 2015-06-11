@@ -5,6 +5,8 @@
  *
  */
 Selectize.define('typing_mode', function(options) {
+    if (this.settings.mode === 'multi') return;
+
     var self = this;
 
     this.setup = (function() {

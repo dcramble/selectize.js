@@ -17,6 +17,8 @@
 /*global Selectize: true, measureString: true */
 
 Selectize.define('item_nowrap', function () {
+	if (this.settings.mode === 'multi') return;
+
 	var originalSetupTemplates = this.setupTemplates;
 	var paddingX;
 
@@ -29,11 +31,7 @@ Selectize.define('item_nowrap', function () {
 		this.settings.render.item = function (data, escape) {
 			var field_label = this.settings.labelField;
 
-			return '<div class="item">' +
-					  '<div class="item-wrap-outer">' +
-						'<div class="item-wrap-inner">' + escape(data[field_label]) + '</div>' +
-					  '</div>' +
-					'</div>';
+			return  '<div class="item item-wrap-outer"><div class="item-wrap-inner">' + escape(data[field_label]) + '</div></div>';
 		};
 	};
 
@@ -54,10 +52,10 @@ Selectize.define('item_nowrap', function () {
 
 		if (textWidth > controlWidth) {
 			$inner.addClass('long-input-value');
-			this.$control_input.css({ opacity: 1, position: 'absolute', left: $outer.width() + paddingX });
+			this.$control_input.css({ opacity: 1, position: 'absolute', left: 5 });
 		} else {
 			$inner.removeClass('long-input-value');
-			this.$control_input.css({ opacity: 1, position: 'absolute', left: textWidth + paddingX });
+			this.$control_input.css({ opacity: 1, position: 'absolute', left: 5 });
 		}
 
 		this.isInputHidden = false;
