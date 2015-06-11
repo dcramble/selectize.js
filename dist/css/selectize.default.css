@@ -51,6 +51,31 @@
 .selectize-dropdown-header-close:hover {
   color: #000000;
 }
+.plugin-item_nowrap.selectize-control.single .selectize-input {
+  height: 36px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.plugin-item_nowrap.selectize-control.single .selectize-input.input-active .item-wrap-inner.long-input-value {
+  text-overflow: initial;
+  width: auto;
+  position: absolute;
+  right: 0;
+}
+.plugin-item_nowrap.selectize-control.single .selectize-input .item-wrap-outer {
+  overflow: hidden;
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: 28px;
+  left: 8px;
+}
+.plugin-item_nowrap.selectize-control.single .selectize-input .item-wrap-outer .item-wrap-inner {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  text-overflow: ellipsis;
+}
 .selectize-dropdown.plugin-optgroup_columns .optgroup {
   border-right: 1px solid #f2f2f2;
   border-top: 0 none;
