@@ -36,7 +36,7 @@ Selectize.define('typing_mode', function(options) {
             });
 
             this.$control_input.on('blur', function() {
-                self.setValue(self.typingValue);
+                self.setValue(self.typingValue, true);
             });
         };
     })();
